@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/submit-complaint">Submit Complaint</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/track-complaints">Track My Complaints</a>
+          </li>
+          
+          
+          
+        </ul>
+        <form class="d-flex" role="search">
+          <label class="role">Customer</label>
+          <a routerLink="login" class="btn btn-success">Logout</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="text-center">
+        
+        <h2>Enter Your Complaint Details here</h2>
+        <form [formGroup]="complaintRef" (ngSubmit)="submitComplaint()">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Enter your address</label>
+                <input type="text" class="form-control" formControlName="address" placeholder="Address">
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Customer email</label>
+                <input type="email" class="form-control" formControlName="cemail" placeholder="Enter your email">
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Zip Code</label>
+                <input type="text" class="form-control" formControlName="cemail" placeholder="Zip Code">
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Enter eng@gmail.com here</label>
+                <input type="email" class="form-control" formControlName="eemail" placeholder="">
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Reason For Complaint</label>
+                <input type="text" class="form-control" formControlName="reason" placeholder="Your reason here">
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Status(RAISED)</label>
+                <input type="text" class="form-control" formControlName="status" placeholder="Type status here">
+              </div>
+    
+              
+            <input type="submit" value="Submit" class="btn btn-success btn-lg"/> &nbsp;
+            
+     <br>
+     <br>
+            <div class="mb-3" *ngIf="errorAlert">
+                <div class="alert alert-primary" role="alert">
+                    {{errorMsg}}
+                  </div>
+              </div>
+        </form>
+    
+        
+    </div>
+    
+  </div>
+  

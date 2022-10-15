@@ -1,0 +1,39 @@
+
+<div class="text-center">
+    <img src="../../assets/images/satellite.png" alt="logo" width="100" height="100">
+    <h2>Register here</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="signUp()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="emailid" placeholder="name@example.com">
+          </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+          </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Fullname</label>
+            <input type="text" class="form-control" formControlName="fullname" placeholder="Enter your fullname">
+          </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">User Type</label>
+            <br>
+            <input type="radio" name="role" value="customer" formControlName="role"/>Customer
+          </div>
+        
+
+          
+        <input type="submit" value="SignUp" class="btn btn-success btn-lg"/> &nbsp;
+        
+ <br>
+ <br>
+        <div class="mb-3" *ngIf="errorAlert">
+            <div class="alert alert-primary" role="alert">
+                {{errorMsg}}
+              </div>
+          </div>
+    </form>
+
+    
+</div>
