@@ -8,4 +8,5 @@ export class Complaint {
         public status:string ){
             
         }
+        
 }

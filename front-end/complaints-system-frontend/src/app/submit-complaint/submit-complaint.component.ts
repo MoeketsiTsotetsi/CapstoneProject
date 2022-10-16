@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ComplaintService } from '../service/complaint.service';
 
 @Component({
   selector: 'app-submit-complaint',
@@ -17,13 +18,22 @@ eemail:new FormControl(),
 reason:new FormControl(),
 status:new FormControl()
 });
-  constructor() { }
+  constructor(public cs:ComplaintService) { }
 
   ngOnInit(): void {
   }
 
   submitComplaint(){
-
+  let complaint = this.complaintRef.value;
+  this.cs.createComplaint(complaint).subscribe(result =>{
+    this.errorAlert = true;
+    this.errorMsg = result;
+    this.complaintRef.reset();
+    
+  },error =>{
+    console.log(error);
+    
+  });
   }
 
 }

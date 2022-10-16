@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,18 +10,18 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" routerLink="/submit-complaint">Submit Complaint</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/track-complaints">Track My Complaints</a>
+            <a class="nav-link" routerLink="/view-all-manager-complaints">View All Complaints</a>
           </li>
           
           
           
         </ul>
+        <label class="role">Manager</label>
         <form class="d-flex" role="search">
-          <label class="role">Customer</label>
+            
+          
           <a routerLink="login" class="btn btn-success">Logout</a>
         </form>
       </div>
@@ -38,6 +39,7 @@
             <th>Assigned Engineer</th>
             <th>Reason</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
     </thead>
     
@@ -50,8 +52,34 @@
             <td>{{c.eemail}}</td>
             <td>{{c.reason}}</td>
             <td>{{c.status}}</td>
+            <td><a class="btn btn-primary" (click)="assignEngineer(c)">Assign Engineer</a></td>
           </tr>
     </tbody>
 
     </table>
-  </div>
+
+    <div class="assign-engineer text-center" *ngIf="flag">
+        <h4>Assign Engineer </h4>
+
+        <form (ngSubmit)="updateComplaintDetails()">
+            <label>Complaint ID</label> <br>
+            <input type="number" name="cid" [(ngModel)]="cid"/><br/>
+            <label>Assigned engineer</label><br>
+            <input type="text" name="eemail" [(ngModel)]="eemail"/><br/>
+            <br>
+            
+            <input type="submit" class="btn btn-primary" value="Assign Engineer"/>
+            <br> <br>
+            <a class="btn btn-warning" (click)="close()">Close</a>
+
+            <br>
+            <br>
+            <div class="alert alert-success" role="alert" *ngIf="msgFlag">
+                {{msg}}
+              </div>
+         </form>
+     </div>
+    </div>
+
+
+  

@@ -16,11 +16,17 @@ export class ComplaintService {
   assignEngineer(complaint:any):Observable<string> {
     return this.http.put(this.baseURL+"/updateComplaintEngineer",complaint,{responseType:"text"});
   }
+  updateComplaintEngineer(complaint:any):Observable<string> {
+    return this.http.put(this.baseURL+"/updateComplaintEngineer",complaint,{responseType:"text"});
+  }
   updateComplaintStatus(complaint:any):Observable<string> {
     return this.http.put(this.baseURL+"/updateComplaintStatus",complaint,{responseType:"text"});
   }
   getComplaintsByStatus(status:any):Observable<Complaint[]> {
     return this.http.get<Complaint[]>(this.baseURL+"/getComplaintsByStatus/"+status);
+  }
+  getComplaintsByCustomerEmail(cemail:any):Observable<Complaint[]> {
+    return this.http.get<Complaint[]>(this.baseURL+"/getComplaintsByCustomer/"+cemail);
   }
   getAllComplaints():Observable<Complaint[]> {
     return this.http.get<Complaint[]>(this.baseURL+"/getAllComplaints");

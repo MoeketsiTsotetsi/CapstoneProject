@@ -14,6 +14,7 @@ import { EngineerComponent } from './engineer/engineer.component';
 import { ViewAllComplaintsComponent } from './view-all-complaints/view-all-complaints.component';
 import { SubmitComplaintComponent } from './submit-complaint/submit-complaint.component';
 import { TrackComplaintsComponent } from './track-complaints/track-complaints.component';
+import { ViewallmanagerComponent } from './viewallmanager/viewallmanager.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TrackComplaintsComponent } from './track-complaints/track-complaints.co
     EngineerComponent,
     ViewAllComplaintsComponent,
     SubmitComplaintComponent,
-    TrackComplaintsComponent
+    TrackComplaintsComponent,
+    ViewallmanagerComponent
   ],
   imports: [
     BrowserModule,
