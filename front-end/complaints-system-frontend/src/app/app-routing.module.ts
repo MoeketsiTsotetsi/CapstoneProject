@@ -10,6 +10,7 @@ import { SubmitComplaintComponent } from './submit-complaint/submit-complaint.co
 import { TrackComplaintsComponent } from './track-complaints/track-complaints.component';
 import { ViewAllComplaintsComponent } from './view-all-complaints/view-all-complaints.component';
 import { ViewallmanagerComponent } from './viewallmanager/viewallmanager.component';
+import { ViewassignedcomplaintsComponent } from './viewassignedcomplaints/viewassignedcomplaints.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'engineer-home',component:EngineerComponent},
   {path:'submit-complaint',component:SubmitComplaintComponent},
   {path:'track-complaints',component:TrackComplaintsComponent},
-  {path:'view-all-manager-complaints',component:ViewallmanagerComponent}
+  {path:'view-all-manager-complaints',component:ViewallmanagerComponent},
+  {path:'view-assigned-complaints',component:ViewassignedcomplaintsComponent}
 ];
 
 @NgModule({

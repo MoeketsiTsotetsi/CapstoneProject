@@ -12,13 +12,12 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" routerLink="/view-all-manager-complaints">View All Complaints</a>
+            <a class="nav-link" routerLink="/view-assigned-complaints">View All Complaints Assigned</a>
           </li>
           
           
-          
         </ul>
-        <label class="role">Manager</label>
+        <label class="role">Engineer</label>
         <form class="d-flex" role="search">
             
           
@@ -52,7 +51,7 @@
             <td>{{c.eemail}}</td>
             <td>{{c.reason}}</td>
             <td>{{c.status}}</td>
-            <td><a class="btn btn-primary" (click)="assignEngineer(c)">Assign Engineer</a></td>
+            <td><a class="btn btn-primary" (click)="changeStatus(c)">Change Status</a></td>
           </tr>
     </tbody>
 
@@ -64,11 +63,11 @@
         <form (ngSubmit)="updateComplaintDetails()">
             <label>Complaint ID</label> <br>
             <input type="number" name="cid" [(ngModel)]="cid"/><br/>
-            <label>Assigned engineer</label><br>
-            <input type="text" name="eemail" [(ngModel)]="eemail"/><br/>
+            <label>New Status</label><br>
+            <input type="text" name="status" [(ngModel)]="status"/><br/>
             <br>
             
-            <input type="submit" class="btn btn-primary" value="Assign Engineer"/>
+            <input type="submit" class="btn btn-primary" value="Change Status"/>
             <br> <br>
             <a class="btn btn-warning" (click)="close()">Close</a>
 
@@ -80,6 +79,3 @@
          </form>
      </div>
     </div>
-
-
-  

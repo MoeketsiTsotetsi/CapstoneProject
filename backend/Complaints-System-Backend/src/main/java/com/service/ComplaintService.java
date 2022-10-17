@@ -69,7 +69,7 @@ public class ComplaintService {
 			db_c.setStatus(c.getStatus());
 			
 			cr.saveAndFlush(db_c);
-			return "Return status changed to"+c.getStatus();
+			return "Return status changed to "+c.getStatus();
 		}else {
 			return "Status not changed";
 		}
