@@ -17,4 +17,11 @@ export class UserService {
   signUp(user:any):Observable<string>{
     return this.http.post(this.baseUrl+"/signUp",user,{responseType:'text'});
   }
+  
+  deleteUser(emailid:any):Observable<string> {
+    return this.http.delete(this.baseUrl+"/deleteuser/"+emailid,{responseType:"text"});
+  }
+  getAllUsers():Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl+"/getAllUsers");
+  }
 }

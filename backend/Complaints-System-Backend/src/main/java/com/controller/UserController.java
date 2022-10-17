@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,12 +30,19 @@ public class UserController {
 	}
 	
 	
+	@DeleteMapping("deleteuser/{emailid}")
+	
+	public String deleteUser(@PathVariable String emailid) {
+		return us.deleteUser(emailid);
+	}
+	
+	
 	@PostMapping(value = "signUp",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String signUp(@RequestBody User u) {
 		return us.signUp(u);
 	}
 	
-	@GetMapping(value = "getAllUsers",consumes = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "getAllUsers",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<User> getAllUsers(){
 		return us.getAllUsers();
 	}

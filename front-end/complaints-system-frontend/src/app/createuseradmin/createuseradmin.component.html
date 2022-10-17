@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
@@ -16,10 +17,6 @@
             <a class="nav-link" routerLink="/view-raised-complaints">View Raised Complaints</a>
           </li>
           <li class="nav-item">
-  
-            <a class="nav-link" routerLink="/view-all-completed-complaints">View Completed Complaints</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" routerLink="/view-wip-complaints">View Work In Progress Complaints</a>
           </li>
           <li class="nav-item">
@@ -33,16 +30,51 @@
             <a class="nav-link" routerLink="/view-all-users">View All Users</a>
           </li>
           
+          
         </ul>
         <form class="d-flex" role="search">
             <label class="role">Admin</label>
-          <a routerLink="login" class="btn btn-success">Logout</a>
+          <a routerLink="/login" class="btn btn-success">Logout</a>
         </form>
       </div>
     </div>
   </nav>
-<div class="container">
-  
-  <router-outlet> </router-outlet>
+<div class="text-center">
+    <img src="../../assets/images/satellite.png" alt="logo" width="100" height="100">
+    <h2>Register here</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="signUp()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="emailid" placeholder="name@example.com">
+          </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+          </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Fullname</label>
+            <input type="text" class="form-control" formControlName="fullname" placeholder="Enter your fullname">
+          </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">User Type</label>
+            <br>
+            <input type="radio" name="role" value="manager" formControlName="role"/>Manager
+            <input type="radio" name="role" value="engineer" formControlName="role"/>Engineer
+          </div>
+        
+
+          
+        <input type="submit" value="SignUp" class="btn btn-success btn-lg"/> &nbsp;
+        
+ <br>
+ <br>
+        <div class="mb-3" *ngIf="errorAlert">
+            <div class="alert alert-primary" role="alert">
+                {{errorMsg}}
+              </div>
+          </div>
+    </form>
+
+    
 </div>
- 

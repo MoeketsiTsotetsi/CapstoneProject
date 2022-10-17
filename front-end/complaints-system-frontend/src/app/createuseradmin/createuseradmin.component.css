@@ -1,0 +1,23 @@
+.form-control{
+    margin-left: 30rem;
+    width:40%;
+}
+
+.btn{
+    border-radius:.9rem;
+}
+
+.alert{
+    width:50%;
+    margin-left: 25rem;
+}
+
+ul{
+    font-size: 1rem;
+    margin-left:4rem;
+}
+
+.role{
+    margin-right: 1rem;
+    font-weight: 500;
+}

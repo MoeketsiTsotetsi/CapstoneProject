@@ -32,7 +32,10 @@ export class ViewAllComplaintsComponent implements OnInit {
     console.log(cid+" deleted");
     
     this.loadComplaints();
-   })
+   },error =>{
+    console.log(error);
+    
+   });
   }
 
   

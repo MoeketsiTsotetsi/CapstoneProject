@@ -16,23 +16,24 @@
             <a class="nav-link" routerLink="/view-raised-complaints">View Raised Complaints</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" routerLink="/view-wip-complaints">View Work In Progress Complaints</a>
+          </li>
+          <li class="nav-item">
+  
+            <a class="nav-link" routerLink="/view-escalated-complaints">View Escalated Complaints</a>
+          </li>
+          <li class="nav-item">
   
             <a class="nav-link" routerLink="/view-all-completed-complaints">View Completed Complaints</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/view-wip-complaints">View Work In Progress Complaints</a>
-          </li>
-          <li class="nav-item">
-
-            <a class="nav-link" routerLink="/view-escalated-complaints">View Escalated Complaints</a>
-          </li>
-          <li class="nav-item">
+            
             <a class="nav-link" routerLink="/create-user">Create User</a>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link" routerLink="/view-all-users">View All Users</a>
           </li>
-          
         </ul>
         <form class="d-flex" role="search">
             <label class="role">Admin</label>
@@ -41,8 +42,33 @@
       </div>
     </div>
   </nav>
-<div class="container">
+    <div class="container">
+      <table class="table table-stripped">
+      <thead>
+          <tr>
+              <th>Complaint ID</th>
+              <th>Customer email</th>
+              <th>Complaint Address</th>
+              <th>Zip Code</th>
+              <th>Assigned Engineer</th>
+              <th>Reason</th>
+              <th>Status</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      
+      <tbody>
+          <tr *ngFor="let c of complaints">
+              <td>{{c.cid}}</td>
+              <td>{{c.cemail}}</td>
+              <td>{{c.address}}</td>
+              <td>{{c.code}}</td>
+              <td>{{c.eemail}}</td>
+              <td>{{c.reason}}</td>
+              <td>{{c.status}}</td>
+              <td><input type="button" value="Delete" class="btn btn-danger" (click)="deleteComplaint(c.cid)"></td>
+            </tr>
+      </tbody>
   
-  <router-outlet> </router-outlet>
-</div>
- 
+      </table>
+    </div>

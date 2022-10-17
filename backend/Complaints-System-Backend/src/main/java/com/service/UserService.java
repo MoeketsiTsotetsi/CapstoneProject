@@ -87,5 +87,16 @@ public class UserService {
 			return "Record not found";
 		}
 	}
+	
+	public String deleteUser(String emailid) {
+		Optional<User>result = userRepository.findById(emailid);
+		
+		if(result.isPresent()) {
+			userRepository.deleteById(emailid);
+			return "User deleted";
+		}else {
+			return "Record not found";
+		}
+	}
 
 }

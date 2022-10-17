@@ -16,6 +16,12 @@ import { SubmitComplaintComponent } from './submit-complaint/submit-complaint.co
 import { TrackComplaintsComponent } from './track-complaints/track-complaints.component';
 import { ViewallmanagerComponent } from './viewallmanager/viewallmanager.component';
 import { ViewassignedcomplaintsComponent } from './viewassignedcomplaints/viewassignedcomplaints.component';
+import { ViewraisedcomplaintsComponent } from './viewraisedcomplaints/viewraisedcomplaints.component';
+import { ViewwipcomplaintsComponent } from './viewwipcomplaints/viewwipcomplaints.component';
+import { ViewescalatedcomplaintsComponent } from './viewescalatedcomplaints/viewescalatedcomplaints.component';
+import { CreateuseradminComponent } from './createuseradmin/createuseradmin.component';
+import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
+import { ViewcompletedcomlaintsComponent } from './viewcompletedcomlaints/viewcompletedcomlaints.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { ViewassignedcomplaintsComponent } from './viewassignedcomplaints/viewas
     SubmitComplaintComponent,
     TrackComplaintsComponent,
     ViewallmanagerComponent,
-    ViewassignedcomplaintsComponent
+    ViewassignedcomplaintsComponent,
+    ViewraisedcomplaintsComponent,
+    ViewwipcomplaintsComponent,
+    ViewescalatedcomplaintsComponent,
+    CreateuseradminComponent,
+    ViewAllUsersComponent,
+    ViewcompletedcomlaintsComponent
   ],
   imports: [
     BrowserModule,
