@@ -16,7 +16,7 @@ public class UserService {
 	UserRepository userRepository;
 
 	public String signIn(User u) {
-		
+
 		Optional<User> result = userRepository.findById(u.getEmailid());
 		if (result.isPresent()) {
 			User db_user = result.get();
@@ -48,12 +48,9 @@ public class UserService {
 			return "Account already exist with that emailid";
 		} else {
 
-			if (u.getRole().equalsIgnoreCase("admin")) {
-				return "cant create admin account";
-			} else {
-				userRepository.save(u);
-				return "User saved";
-			}
+			userRepository.save(u);
+			return "User saved";
+
 		}
 	}
 
@@ -71,30 +68,30 @@ public class UserService {
 			return "password  updated";
 		}
 	}
-	
-	public List<User> getAllUsers(){
+
+	public List<User> getAllUsers() {
 		return userRepository.findAll();
 	}
-	
+
 	public String getUser(String emailid) {
-		Optional<User>result = userRepository.findById(emailid);
-		
+		Optional<User> result = userRepository.findById(emailid);
+
 		if (result.isPresent()) {
 			User db_user = result.get();
-			
+
 			return db_user.toString();
-		}else {
+		} else {
 			return "Record not found";
 		}
 	}
-	
+
 	public String deleteUser(String emailid) {
-		Optional<User>result = userRepository.findById(emailid);
-		
-		if(result.isPresent()) {
+		Optional<User> result = userRepository.findById(emailid);
+
+		if (result.isPresent()) {
 			userRepository.deleteById(emailid);
 			return "User deleted";
-		}else {
+		} else {
 			return "Record not found";
 		}
 	}
