@@ -7,3 +7,13 @@ ul{
     margin-right: 1rem;
     font-weight: 500;
 }
+
+.form-control{
+    width:50%;
+    margin-left: 20rem;
+}
+
+*{
+
+    color: white;
+}

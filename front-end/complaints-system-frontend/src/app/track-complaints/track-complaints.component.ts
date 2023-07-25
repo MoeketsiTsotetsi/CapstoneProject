@@ -9,13 +9,18 @@ import { ComplaintService } from '../service/complaint.service';
 })
 export class TrackComplaintsComponent implements OnInit {
   complaints:Array<Complaint> = [];
+  fullname:string = "";
   
   constructor(public cs:ComplaintService) { }
 
   ngOnInit(): void {
     var customerEmail= localStorage.getItem("userEmail");
-   this.loadComplaints(customerEmail);
-   console.log(this.complaints);
+    if(customerEmail != null){
+      this.fullname = customerEmail.toString();
+     this.loadComplaints(customerEmail);
+    }
+   
+   
    
     
   }

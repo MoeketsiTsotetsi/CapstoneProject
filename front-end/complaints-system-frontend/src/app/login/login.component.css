@@ -1,13 +1,32 @@
 .form-control{
-    margin-left: 30rem;
-    width:40%;
+    margin-left: 10rem;
+    width:50%;
 }
 
-.btn{
-    border-radius:.9rem;
+.form-label,h2{
+    color:white;
 }
+
+
+
+
 
 .alert{
     width:50%;
-    margin-left: 25rem;
+    margin-left: 5rem;
+}
+
+.homeDiv{
+    margin-top:5rem;
+    border-style:double;
+    padding-top: 1rem;
+    border-color: red;
+    width: 40%;
+    border-radius: .6rem;
+    margin-left: 30rem;
+}
+
+.btn{
+    margin-bottom: 2rem;
+    width: 50%;
 }

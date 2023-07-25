@@ -1,3 +1,11 @@
+
+.form-label,h2{
+    color:white;
+}
+
+.radioBtn{
+    color: white;
+}
 .form-control{
     margin-left: 30rem;
     width:40%;

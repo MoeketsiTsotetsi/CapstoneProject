@@ -21,6 +21,7 @@ import { ViewwipcomplaintsComponent } from './viewwipcomplaints/viewwipcomplaint
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'submit-complaint/login',component:LoginComponent},
   {path:'home',component:HomeComponent},
   {path:'register',component:RegistrationComponent},
   {path:'manager-home',component:ManagerHomeComponent},

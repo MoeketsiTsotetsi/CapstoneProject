@@ -9,6 +9,7 @@ import { ComplaintService } from '../service/complaint.service';
 })
 export class SubmitComplaintComponent implements OnInit {
 errorAlert:boolean = false;
+fullname:string = "";
 errorMsg:string = "";
 complaintRef = new FormGroup({
 address:new FormControl(),
@@ -21,6 +22,7 @@ status:new FormControl()
   constructor(public cs:ComplaintService) { }
 
   ngOnInit(): void {
+    this.fullname = JSON.stringify(localStorage.getItem("userEmail"));
   }
 
   submitComplaint(){
