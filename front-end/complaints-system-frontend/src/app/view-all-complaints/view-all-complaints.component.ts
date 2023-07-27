@@ -9,11 +9,12 @@ import { ComplaintService } from '../service/complaint.service';
 })
 export class ViewAllComplaintsComponent implements OnInit {
   complaints:Array<Complaint>=[];
+  userEmail:string = "";
   constructor(public cs:ComplaintService) { }
 
   ngOnInit(): void {
    this.loadComplaints();
-   
+   this.userEmail = JSON.stringify(localStorage.getItem("userEmail")).trim();
   }
 
   loadComplaints(){

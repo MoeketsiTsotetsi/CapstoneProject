@@ -12,6 +12,7 @@ export class ViewassignedcomplaintsComponent implements OnInit {
   complaints:Array<Complaint> = [];
    
   flag:boolean = false;
+  hasComplaints:boolean = false;
   msgFlag:boolean = false;
   msg:string = "";
   cid:number = 0;
@@ -26,6 +27,10 @@ export class ViewassignedcomplaintsComponent implements OnInit {
   }
 
     this.loadComplaints(this.eemail);
+    if(this.complaints.length> 0){
+      this.hasComplaints = true;
+      
+    }
   }
   
     

@@ -11,9 +11,11 @@ export class ViewraisedcomplaintsComponent implements OnInit {
 complaints:Array<Complaint> = [];
   constructor(public cs:ComplaintService) { }
   status:string = "RAISED" ;
+  userEmail:string = "";
   ngOnInit(): void {
     
     this.loadComplaints(this.status);
+    this.userEmail = JSON.stringify(localStorage.getItem("userEmail")).trim();
   }
 
   loadComplaints(status:any){

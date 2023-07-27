@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
       
@@ -8,11 +8,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link text-danger active" aria-current="page" routerLink="/engineer-home" >Home</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" routerLink="/view-assigned-complaints">View All Complaints Assigned</a>
+            <a class="nav-link text-danger" routerLink="/view-assigned-complaints">View All Complaints Assigned</a>
           </li>
           
           
@@ -21,10 +21,15 @@
         <form class="d-flex" role="search">
             
           
-          <a routerLink="login" class="btn btn-success">Logout</a>
+          <a routerLink="/login" class="btn btn-success">Logout</a>
         </form>
       </div>
     </div>
   </nav>
 
-  <router-outlet> </router-outlet>
+  <div class="container">
+    <h1>Engineer hOME</h1>
+      
+  </div>
+
+  
