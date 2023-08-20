@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
       
@@ -8,17 +8,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active text-danger" aria-current="page" routerLink="/manager-home">Home</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" routerLink="/view-all-manager-complaints">View All Complaints</a>
+            <a class="nav-link text-danger" routerLink="/view-all-manager-complaints">View All Complaints</a>
           </li>
           
           
           
         </ul>
-        <label class="role">Manager</label>
+        <label class="role text-danger">Manager</label>
         <form class="d-flex" role="search">
             
           
@@ -29,57 +29,66 @@
   </nav>
 
   <div class="container">
-    <table class="table table-stripped">
-    <thead>
+    <table class="table table-hover table-dark mt-4">
+      <thead>
         <tr>
-            <th>Complaint ID</th>
-            <th>Customer email</th>
-            <th>Complaint Address</th>
-            <th>Zip Code</th>
-            <th>Assigned Engineer</th>
-            <th>Reason</th>
-            <th>Status</th>
-            <th>Action</th>
+          <th>Complaint ID</th>
+          <th>Customer email</th>
+          <th>Complaint Address</th>
+          <th>Zip Code</th>
+          <th>Assigned Engineer</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <th>Action</th>
         </tr>
-    </thead>
-    
-    <tbody>
+      </thead>
+  
+      <tbody>
         <tr *ngFor="let c of complaints">
-            <td>{{c.cid}}</td>
-            <td>{{c.cemail}}</td>
-            <td>{{c.address}}</td>
-            <td>{{c.code}}</td>
-            <td>{{c.eemail}}</td>
-            <td>{{c.reason}}</td>
-            <td>{{c.status}}</td>
-            <td><a class="btn btn-primary" (click)="assignEngineer(c)">Assign Engineer</a></td>
-          </tr>
-    </tbody>
-
+          <td>{{c.cid}}</td>
+          <td>{{c.cemail}}</td>
+          <td>{{c.address}}</td>
+          <td>{{c.code}}</td>
+          <td>{{c.eemail}}</td>
+          <td>{{c.reason}}</td>
+          <td>{{c.status}}</td>
+          <td>
+            <a class="btn btn-primary" (click)="assignEngineer(c)">Assign Engineer</a>
+          </td>
+        </tr>
+      </tbody>
     </table>
+  
+    <div class="assign-engineer text-center text-primary" *ngIf="flag">
+      <h4>Assign Engineer</h4>
+  
+      <form (ngSubmit)="updateComplaintDetails()">
+        <!-- ... Other fields ... -->
+  
+        <!-- Engineer dropdown as part of the form -->
+        <div>
+          <label>Assigned Engineer</label><br>
+          <select name="eemail" [(ngModel)]="eemail">
+            <option *ngFor="let engineer of engineers" [value]="engineer.emailid">{{ engineer.fullname }}</option>
+          </select>
 
-    <div class="assign-engineer text-center" *ngIf="flag">
-        <h4>Assign Engineer </h4>
-
-        <form (ngSubmit)="updateComplaintDetails()">
-            <label>Complaint ID</label> <br>
-            <input type="number" name="cid" [(ngModel)]="cid"/><br/>
-            <label>Assigned engineer</label><br>
-            <input type="text" name="eemail" [(ngModel)]="eemail"/><br/>
-            <br>
-            
-            <input type="submit" class="btn btn-primary" value="Assign Engineer"/>
-            <br> <br>
-            <a class="btn btn-warning" (click)="close()">Close</a>
-
-            <br>
-            <br>
-            <div class="alert alert-success" role="alert" *ngIf="msgFlag">
-                {{msg}}
-              </div>
-         </form>
-     </div>
+        </div>
+  
+        <br>
+  
+        <input type="submit" class="btn btn-primary" value="Assign Engineer" />
+        <br> <br>
+        <a class="btn btn-warning" (click)="close()">Close</a>
+  
+        <br>
+        <br>
+        <div class="alert alert-success" role="alert" *ngIf="msgFlag">
+          {{msg}}
+        </div>
+      </form>
     </div>
+  </div>
+
 
 
   

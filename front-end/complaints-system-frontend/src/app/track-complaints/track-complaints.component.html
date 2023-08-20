@@ -28,7 +28,7 @@
   </nav>
 
   <div class="container"> 
-    <table class="table table-dark table-hover mt-4">
+    <table class="table table-dark table-hover mt-4" *ngIf="hasComplaints" >
     <thead>
         <tr>
             <th>Complaint ID</th>
@@ -54,4 +54,8 @@
     </tbody>
 
     </table>
+
+    <div class="nocomplaintsmessage" *ngIf="!hasComplaints" >
+      <h1 class="text-center">You Have Not Made Any A Complaints Yet</h1>
+    </div>
   </div>

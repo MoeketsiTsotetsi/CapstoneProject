@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Complaint } from '../model/complaint';
 import { ComplaintService } from '../service/complaint.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-track-complaints',
@@ -10,29 +11,40 @@ import { ComplaintService } from '../service/complaint.service';
 export class TrackComplaintsComponent implements OnInit {
   complaints:Array<Complaint> = [];
   fullname:string = "";
+  hasComplaints:boolean = false;
+  complaintsSubscription: Subscription | undefined;
   
   constructor(public cs:ComplaintService) { }
 
   ngOnInit(): void {
-    var customerEmail= localStorage.getItem("userEmail");
-    if(customerEmail != null){
-      this.fullname = customerEmail.toString();
-     this.loadComplaints(customerEmail);
-    }
-   
-   
-   
-    
+  const customerEmail = localStorage.getItem("userEmail");
+  if (customerEmail !== null) {
+    this.fullname = customerEmail.toString();
+    this.loadComplaints(customerEmail);
+  } 
   }
 
   loadComplaints(customerEmail:any){
-    this.cs.getComplaintsByCustomerEmail(customerEmail).subscribe(result =>{
+     this.complaintsSubscription = this.cs.getComplaintsByCustomerEmail(customerEmail).subscribe({
+    next: (result) => {
       this.complaints = result;
-      
-    },error =>{
-      console.log(error);
-      
-    });
+      if (this.complaints.length > 0) {
+        this.hasComplaints = true;
+        console.log(this.hasComplaints);
+      }
+    },
+    error: (err) => {
+      console.log(err);
+    }
+  });
   }
 
+
+   ngOnDestroy(): void {
+    if (this.complaintsSubscription) {
+      this.complaintsSubscription.unsubscribe();
+    }
+  }
 }
+
+
