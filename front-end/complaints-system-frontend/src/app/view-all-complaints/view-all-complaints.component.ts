@@ -14,7 +14,7 @@ export class ViewAllComplaintsComponent implements OnInit {
 
   ngOnInit(): void {
    this.loadComplaints();
-   this.userEmail = JSON.stringify(localStorage.getItem("userEmail")).trim();
+   this.userEmail = localStorage.getItem("userEmail")as string;
   }
 
   loadComplaints(){

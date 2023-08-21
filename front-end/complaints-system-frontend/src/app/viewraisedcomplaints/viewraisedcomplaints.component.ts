@@ -15,7 +15,7 @@ complaints:Array<Complaint> = [];
   ngOnInit(): void {
     
     this.loadComplaints(this.status);
-    this.userEmail = JSON.stringify(localStorage.getItem("userEmail")).trim();
+    this.userEmail = localStorage.getItem("userEmail") as string;
   }
 
   loadComplaints(status:any){

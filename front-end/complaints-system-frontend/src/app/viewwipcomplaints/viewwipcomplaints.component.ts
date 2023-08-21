@@ -12,9 +12,13 @@ export class ViewwipcomplaintsComponent implements OnInit {
   complaints:Array<Complaint> = [];
   constructor(public cs:ComplaintService) { }
   status:string = "WIP" ;
+  email:string = "";
   ngOnInit(): void {
     
     this.loadComplaints(this.status);
+    this.email = localStorage.getItem("userEmail") as string;
+    
+    
   }
 
   loadComplaints(status:any){

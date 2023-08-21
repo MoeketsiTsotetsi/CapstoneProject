@@ -3,6 +3,7 @@ package com.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,58 +17,51 @@ public class UserService {
 	UserRepository userRepository;
 
 	public String signIn(User u) {
+        Optional<User> result = userRepository.findById(u.getEmailid());
+        if (result.isPresent()) {
+            User dbUser = result.get();
 
-		Optional<User> result = userRepository.findById(u.getEmailid());
-		if (result.isPresent()) {
-			User db_user = result.get();
+            if (BCrypt.checkpw(u.getPassword(), dbUser.getPassword())) {
+                String role = dbUser.getRole().toLowerCase();
+                return role + " login";
+            } else {
+                return "Wrong password";
+            }
 
-			if (db_user.getPassword().equals(u.getPassword())) {
-				if (db_user.getRole().equalsIgnoreCase("admin")) {
-					return "admin login";
+        } else {
+            return "Wrong email id";
+        }
+    }
 
-				} else if (db_user.getRole().equalsIgnoreCase("manager")) {
-					return "manager login";
-				} else if (db_user.getRole().equalsIgnoreCase("engineer")) {
-					return "engineer login";
-				} else {
-					return "customer login";
-				}
-			} else {
-				return "Wrong password";
-			}
+	 public String signUp(User u) {
+	        Optional<User> existingUser = userRepository.findById(u.getEmailid());
 
-		} else {
-			return "Wrong email id";
-		}
-	}
+	        if (existingUser.isPresent()) {
+	            return "Account already exists with that emailid";
+	        } else {
+	            // Hash the password before saving
+	            String plainPassword = u.getPassword();
+	            String hashedPassword = BCrypt.hashpw(plainPassword, BCrypt.gensalt());
+	            u.setPassword(hashedPassword);
 
-	public String signUp(User u) {
-		Optional<User> result = userRepository.findById(u.getEmailid());
+	            userRepository.save(u);
+	            return "User saved";
+	        }
+	    }
 
-		if (result.isPresent()) {
-			return "Account already exist with that emailid";
-		} else {
+	 public String updatePassword(User u) {
+	        Optional<User> result = userRepository.findById(u.getEmailid());
 
-			userRepository.save(u);
-			return "User saved";
-
-		}
-	}
-
-	public String updatePassword(User u) {
-		Optional<User> result = userRepository.findById(u.getEmailid());
-
-		if (result.isPresent() != true) {
-
-			return "password not updated";
-
-		} else {
-			User db_user = result.get();
-			db_user.setPassword(u.getPassword());
-			userRepository.saveAndFlush(db_user);
-			return "password  updated";
-		}
-	}
+	        if (!result.isPresent()) {
+	            return "Password not updated";
+	        } else {
+	            User dbUser = result.get();
+	            String hashedPassword = BCrypt.hashpw(u.getPassword(), BCrypt.gensalt());
+	            dbUser.setPassword(hashedPassword);
+	            userRepository.saveAndFlush(dbUser);
+	            return "Password updated";
+	        }
+	    }
 
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
