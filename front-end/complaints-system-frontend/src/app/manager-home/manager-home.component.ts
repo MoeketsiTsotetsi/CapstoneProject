@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manager-home.component.css']
 })
 export class ManagerHomeComponent implements OnInit {
+  email:string = "";
 
   constructor() { }
 
   ngOnInit(): void {
+    this.email = localStorage.getItem("userEmail") as string;
   }
 
 }

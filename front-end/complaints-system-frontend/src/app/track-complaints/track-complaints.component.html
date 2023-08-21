@@ -20,7 +20,7 @@
           
         </ul>
         <form class="d-flex" role="search">
-          <label class="role">{{fullname}}</label>
+          <label class="role text-danger">{{fullname}}</label>
           <a routerLink="/login" class="btn btn-success">Logout</a>
         </form>
       </div>
@@ -56,6 +56,6 @@
     </table>
 
     <div class="nocomplaintsmessage" *ngIf="!hasComplaints" >
-      <h1 class="text-center">You Have Not Made Any A Complaints Yet</h1>
+      <h1 class="text-center text-white">You Have Not Made Any A Complaints Yet</h1>
     </div>
   </div>

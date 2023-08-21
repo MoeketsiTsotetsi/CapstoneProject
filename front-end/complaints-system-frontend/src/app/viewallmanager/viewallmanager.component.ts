@@ -13,7 +13,7 @@ export class ViewallmanagerComponent implements OnInit {
    complaints:Array<Complaint> = [];
    users:Array<User> = [];
    engineers:Array<User> = [];
-   
+   managerEmail:string = "";
    flag:boolean = false;
    msgFlag:boolean = false;
    msg:string = "";
@@ -24,6 +24,7 @@ export class ViewallmanagerComponent implements OnInit {
 ngOnInit(): void {
   this.loadComplaints();
   this.loadEngineers();
+  this.managerEmail = localStorage.getItem("userEmail") as string;
 }
 
 loadEngineers() {

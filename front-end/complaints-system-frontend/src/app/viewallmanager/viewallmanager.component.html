@@ -18,7 +18,7 @@
           
           
         </ul>
-        <label class="role text-danger">Manager</label>
+        <label class="role text-danger">Manager: {{managerEmail}}</label>
         <form class="d-flex" role="search">
             
           
@@ -63,8 +63,6 @@
       <h4>Assign Engineer</h4>
   
       <form (ngSubmit)="updateComplaintDetails()">
-        <!-- ... Other fields ... -->
-  
         <!-- Engineer dropdown as part of the form -->
         <div>
           <label>Assigned Engineer</label><br>
