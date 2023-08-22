@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(public _router:Router) { }
 
   ngOnInit(): void {
-    this.fullname = JSON.stringify(localStorage.getItem("userEmail"));
+    this.fullname = localStorage.getItem("userEmail") as string;
 
   }
 

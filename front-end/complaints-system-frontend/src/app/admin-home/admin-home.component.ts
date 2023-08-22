@@ -11,7 +11,7 @@ export class AdminHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.userEmail = JSON.stringify(localStorage.getItem("userEmail")).trim();
+    this.userEmail = localStorage.getItem("userEmail") as string;
 
   }
 

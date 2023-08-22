@@ -10,6 +10,7 @@ import {UserService} from "../service/user.service";
 export class CreateuseradminComponent implements OnInit {
   errorAlert:boolean = false;
   errorMsg:string = "";
+  adminEmail:string = "";
   
   loginRef = new FormGroup({
   emailid : new FormControl(),
@@ -22,6 +23,11 @@ export class CreateuseradminComponent implements OnInit {
   constructor(public us:UserService) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("userEmail")!=null){
+      this.adminEmail = localStorage.getItem("userEmail") as string;
+      console.log(this.adminEmail);
+      
+    }
   }
 
   signUp(){

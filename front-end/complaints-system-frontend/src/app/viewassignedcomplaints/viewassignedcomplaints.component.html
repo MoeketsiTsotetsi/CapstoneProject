@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
+      <a class="navbar-brand" routerLink="/engineer-home"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
           
           
         </ul>
-        <label class="role">Engineer</label>
+        <label class="role text-danger">Engineer:{{userEmail}}</label>
         <form class="d-flex" role="search">
             
           
@@ -28,7 +28,7 @@
   </nav>
 
   <div class="container">
-    <table class="table table-stripped" *ngIf="hasComplaints">
+    <table class="table table-dark mt-4" *ngIf="hasComplaints">
     <thead>
         <tr>
             <th>Complaint ID</th>
@@ -57,7 +57,7 @@
 
     </table>
 
-    <div class="assign-engineer text-center" *ngIf="flag">
+    <div class="assign-engineer text-center text-white" *ngIf="flag">
         <h4>Assign Engineer </h4>
 
         <form (ngSubmit)="updateComplaintDetails()">
@@ -80,6 +80,6 @@
      </div>
 
      <div class="nocomplaintsmessage" *ngIf="!hasComplaints">
-      <h1 class="text-center"> You have no assigned Complaints at the moment</h1>
+      <h1 class="text-center text-white"> You have no assigned Complaints at the moment</h1>
      </div>
     </div>

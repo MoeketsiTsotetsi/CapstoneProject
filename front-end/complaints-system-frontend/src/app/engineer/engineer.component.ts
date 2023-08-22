@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./engineer.component.css']
 })
 export class EngineerComponent implements OnInit {
-
+  email:string = "";
   constructor() { }
 
   ngOnInit(): void {
+    this.email = localStorage.getItem("userEmail") as string;
   }
 
 }

@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg bg-black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
+      <a class="navbar-brand" routerLink="/engineer-home"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
           
           
         </ul>
-        <label class="role">Engineer</label>
+        <label class="role text-danger">Engineer:{{email}}</label>
         <form class="d-flex" role="search">
             
           
@@ -28,7 +28,7 @@
   </nav>
 
   <div class="container">
-    <h1>Engineer hOME</h1>
+    <h1 class="text-center text-white">Welcome Engineer {{email}} !!</h1>
       
   </div>
 
