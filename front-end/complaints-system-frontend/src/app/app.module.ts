@@ -22,6 +22,8 @@ import { ViewescalatedcomplaintsComponent } from './viewescalatedcomplaints/view
 import { CreateuseradminComponent } from './createuseradmin/createuseradmin.component';
 import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
 import { ViewcompletedcomlaintsComponent } from './viewcompletedcomlaints/viewcompletedcomlaints.component';
+import { NavigationComponent } from './navigation/navigation.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ViewcompletedcomlaintsComponent } from './viewcompletedcomlaints/viewco
     ViewescalatedcomplaintsComponent,
     CreateuseradminComponent,
     ViewAllUsersComponent,
-    ViewcompletedcomlaintsComponent
+    ViewcompletedcomlaintsComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
