@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 
@@ -8,49 +8,42 @@ import { UserService } from '../service/user.service';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent implements OnInit {
-errorAlert:boolean = false;
-errorMsg:string = "";
+export class RegistrationComponent {
 
-loginRef = new FormGroup({
-emailid : new FormControl(),
-password:new FormControl(),
-fullname : new FormControl(),
-role:new FormControl()
+  errorAlert: boolean = false;
+  errorMsg: string = "";
 
-});
-  constructor(public us:UserService,public router:Router) { }
+  loginRef = new FormGroup({
+    emailid: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    fullname: new FormControl('', Validators.required),
+    role: new FormControl('', Validators.required)
+  });
 
-  ngOnInit(): void {
+  constructor(public us: UserService, public router: Router) { }
+
+  redirectToLogin():void{
+   this.router.navigate(['/login']);
   }
 
- 
+  signUp() {
+    if (this.loginRef.valid) {
+      let user = this.loginRef.value;
 
-  signUp(){
-    let user = this.loginRef.value;
-
-    if(user.emailid !="" && user.fullname!="" &&user.password!=""&&user.role!=""){
       this.us.signUp(user).subscribe({
-        next:(result:any)=> {
-             if(result == "User saved"){
-              alert("Successfully registered");
-              this.router.navigate(['/login']);
-  
-             }else{
-              this.errorAlert = true;
-              this.errorMsg = result;
-             }
+        next: (result: any) => {
+          if (result == "User saved") {
+            alert("Successfully registered");
+            this.router.navigate(['/login']);
+          } else {
+            this.errorAlert = true;
+            this.errorMsg = result;
+          }
         },
-        error:(error:any)=>console.log(error),
-    
-        complete:()=>console.log("done")
-        
+        error: (error: any) => console.log(error)
       });
-    }else{
-      alert("Enter all the details");
+    } else {
+      alert("Please fill out all the required fields correctly.");
     }
-   
-  
   }
-
 }
