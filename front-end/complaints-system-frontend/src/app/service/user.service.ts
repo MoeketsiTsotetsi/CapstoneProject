@@ -24,4 +24,22 @@ export class UserService {
   getAllUsers():Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl+"/getAllUsers");
   }
+
+  getUserByEmail(emailid:any):Observable<User>{
+    
+    return this.http.get<User>(this.baseUrl+"/getUser/"+emailid);
+  }
+
+  comparePassword(user: User): Observable<boolean> {
+    const url = `${this.baseUrl}/comparePassword`;
+
+    return this.http.post<boolean>(url, user);
+  }
+
+ updatePassword(user: User): Observable<string> {
+  const url = `${this.baseUrl}/updatePassword`;
+
+  return this.http.post(url, user, { responseType: 'text' });
+}
+
 }

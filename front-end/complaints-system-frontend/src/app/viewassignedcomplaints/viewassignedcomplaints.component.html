@@ -36,9 +36,14 @@
         <form (ngSubmit)="updateComplaintDetails()">
             <label>Complaint ID</label> <br>
             <input type="number" name="cid" [(ngModel)]="cid"/><br/>
-            <label>New Status</label><br>
-            <input type="text" name="status" [(ngModel)]="status"/><br/>
-            <br>
+            <label for="status"> New Status:</label> <br/>
+            <select name="status" [(ngModel)]="status">
+                <option value="Raised">Raised</option>
+                <option value="WIP">WIP</option>
+                <option value="Escalated">Escalated</option>
+                <option value="Completed">Completed</option>
+            </select><br /><br>
+
             
             <input type="submit" class="btn btn-primary" value="Change Status"/>
             <br> <br>

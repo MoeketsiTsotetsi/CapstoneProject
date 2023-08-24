@@ -1,7 +1,13 @@
 export class User {
-    constructor(public emailid:string, public fullname:string,
-        public role:string,public password:string){
-            
-        }
-}
+  emailid: string = '';
+  fullname: string = '';
+  role: string = '';
+  password: string = '';
 
+  constructor(emailid: string, fullname: string, role: string, password: string) {
+    this.emailid = emailid;
+    this.fullname = fullname;
+    this.role = role;
+    this.password = password;
+  }
+}

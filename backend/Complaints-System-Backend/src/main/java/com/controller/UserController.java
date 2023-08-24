@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.User;
@@ -48,10 +49,12 @@ public class UserController {
 	}
 	
 	
-	@GetMapping(value = "getUser/{emailid}",consumes = MediaType.APPLICATION_JSON_VALUE)
-	public String getUser(@PathVariable String emailid) {
+	@GetMapping(value = "getUser/{emailid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public User getUser(@PathVariable String emailid) {
 		return us.getUser(emailid);
 	}
+	
+	
 	
 	@PostMapping(value = "updatePassword",consumes = MediaType.APPLICATION_JSON_VALUE)
 	

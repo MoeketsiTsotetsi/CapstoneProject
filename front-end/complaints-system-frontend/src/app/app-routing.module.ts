@@ -17,6 +17,7 @@ import { ViewcompletedcomlaintsComponent } from './viewcompletedcomlaints/viewco
 import { ViewescalatedcomplaintsComponent } from './viewescalatedcomplaints/viewescalatedcomplaints.component';
 import { ViewraisedcomplaintsComponent } from './viewraisedcomplaints/viewraisedcomplaints.component';
 import { ViewwipcomplaintsComponent } from './viewwipcomplaints/viewwipcomplaints.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path:'view-escalated-complaints',component:ViewescalatedcomplaintsComponent},
   {path:'create-user',component:CreateuseradminComponent},
   {path:'view-all-users',component:ViewAllUsersComponent},
-  {path:'view-all-completed-complaints',component:ViewcompletedcomlaintsComponent}
+  {path:'view-all-completed-complaints',component:ViewcompletedcomlaintsComponent},
+  {path:'profile',component:ProfileComponent}
 ];
 
 @NgModule({

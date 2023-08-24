@@ -1,23 +1,37 @@
+/* Add these styles to your CSS */
 
-.form-label,h2{
-    color:white;
-}
-
-.radioBtn{
+.form-label,
+h2,
+.radioBtn {
     color: white;
 }
-.form-control{
-    margin-left: 30rem;
-    width:40%;
+
+.form-control {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    color: white;
 }
 
-.btn{
-    border-radius:.9rem;
+.btn {
+    border-radius: 0.9rem;
 }
 
-.alert{
-    width:50%;
+.alert {
+    width: 50%;
     margin-left: 25rem;
+}
+
+.registerDiv {
+    border: 2px solid #ccc;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Media query for mobile and tablet screens */
@@ -37,17 +51,10 @@
         margin-top: 20px;
     }
 
-    .registerDiv .form-control {
-        width: 100%;
-        margin: 0;
-        /* Remove all margins */
-    }
-
     .registerDiv input[type="submit"],
     .registerDiv button {
         width: 100%;
         font-size: 18px;
-        /* Adjust font size for smaller screens */
         margin-top: 10px;
     }
 }
@@ -61,6 +68,5 @@
 
     .registerDiv .form-control {
         margin: 0;
-        /* Remove all margins on mobile screens */
     }
 }

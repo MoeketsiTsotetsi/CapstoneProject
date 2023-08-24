@@ -67,17 +67,20 @@ public class UserService {
 		return userRepository.findAll();
 	}
 
-	public String getUser(String emailid) {
+	public User getUser(String emailid) {
 		Optional<User> result = userRepository.findById(emailid);
 
 		if (result.isPresent()) {
 			User db_user = result.get();
 
-			return db_user.toString();
+			return db_user;
 		} else {
-			return "Record not found";
+			return null;
 		}
 	}
+	
+	
+	
 
 	public String deleteUser(String emailid) {
 		Optional<User> result = userRepository.findById(emailid);
