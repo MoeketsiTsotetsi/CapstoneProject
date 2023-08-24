@@ -23,6 +23,7 @@ import { CreateuseradminComponent } from './createuseradmin/createuseradmin.comp
 import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
 import { ViewcompletedcomlaintsComponent } from './viewcompletedcomlaints/viewcompletedcomlaints.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     CreateuseradminComponent,
     ViewAllUsersComponent,
     ViewcompletedcomlaintsComponent,
-    NavigationComponent
+    NavigationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

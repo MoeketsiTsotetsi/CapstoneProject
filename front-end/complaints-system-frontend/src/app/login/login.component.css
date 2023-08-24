@@ -30,3 +30,55 @@
     margin-bottom: 2rem;
     width: 50%;
 }
+
+
+/* Media query for tablet and mobile screens */
+@media (max-width: 768px) {
+    .homeDiv {
+        padding: 20px;
+        text-align: center;
+        height: 100vh;
+        /* Make the div fill the viewport height */
+        width: 100vw;
+        /* Make the div fill the viewport width */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .homeDiv img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .homeDiv h2 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .homeDiv input[type="email"],
+    .homeDiv input[type="password"] {
+        width: 100%;
+        font-size: 16px;
+        /* Adjust font size for smaller screens */
+        margin: 0;
+        /* Remove all margins */
+    }
+
+    .homeDiv input[type="submit"],
+    .homeDiv input[type="button"] {
+        width: 100%;
+        font-size: 18px;
+        /* Adjust font size for smaller screens */
+        margin-top: 10px;
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 576px) {
+    .homeDiv h2 {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+}

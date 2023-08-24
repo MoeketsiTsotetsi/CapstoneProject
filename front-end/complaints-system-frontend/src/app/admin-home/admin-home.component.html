@@ -1,14 +1,60 @@
 <app-navigation></app-navigation>
 
-  <div class="container">
-    <h2 class="text-center text-white">Admin Home</h2>
-    <ul class="text-center">
-      <li>
-      1.kdhkldhkldhlkdhdh
-      </li>
-      <li>
-      1.kdhkldhkldhlkdhdh
-      </li>
-    </ul>
-  </div>
- 
+<div class="container-fluid">
+  <header class="text-center mt-5">
+    <h1 class="display-4 text-white">Welcome to the Admin Panel</h1>
+    <p class="lead text-white">Your hub for managing and overseeing various aspects of the system.</p>
+  </header>
+
+  <main class="mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+
+        <section id="dashboard" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/admin-home'">Dashboard Overview</a></h2>
+          <p>Get an overview of key metrics, trends, and system status.</p>
+        </section>
+
+        <section id="create-user" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/create-user'">Create User</a></h2>
+          <p>Add new users to the system with relevant information and roles.</p>
+        </section>
+
+        <section id="all-users" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/view-all-users'">All Users</a></h2>
+          <p>View a list of all registered users in the system.</p>
+        </section>
+
+        <section id="wip-complaints" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/view-wip-complaints'">WIP Complaints</a></h2>
+          <p>Monitor and manage complaints that are currently being worked on.</p>
+        </section>
+
+        <section id="completed-complaints" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/view-all-completed-complaints'">Completed Complaints</a></h2>
+          <p>Review and track complaints that have been successfully resolved.</p>
+        </section>
+
+        <section id="all-complaints" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/view-all-complaints'">All Complaints</a></h2>
+          <p>Access a comprehensive list of all complaints submitted by users.</p>
+        </section>
+
+        <section id="raised-complaints" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/view-raised-complaints'">Raised Complaints</a></h2>
+          <p>View complaints raised by users and assign them for resolution.</p>
+        </section>
+
+        <section id="escalated-complaints" class="feature py-4">
+          <h2 class="mb-3"><a [routerLink]="'/view-escalated-complaints'">Escalated Complaints</a></h2>
+          <p>Handle complaints that have been escalated due to their nature or urgency.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center mt-5 text-white">
+    <p>&copy; 2023 Tsotetsi Moeketsi. All rights reserved.</p>
+  </footer>
+</div>

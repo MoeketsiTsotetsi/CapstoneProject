@@ -1,8 +1,35 @@
 <app-navigation></app-navigation>
 
-  <div class="container">
-    <h1 class="text-center text-white">Welcome Engineer {{email}} !!</h1>
-      
+  <div class="container-fluid">
+    <header class="text-center mt-5 text-white">
+      <h1 class="display-4">Welcome to the Engineer Dashboard</h1>
+      <p class="lead">Your hub for managing assigned complaints and resolving issues.</p>
+    </header>
+  
+    <main class="mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+  
+          <section id="engineer-home" class="feature py-4">
+            <h2 class="mb-3"><a [routerLink]="'/engineer-home'">Engineer Home</a></h2>
+            <p>Access the engineer dashboard to view and manage assigned complaints.</p>
+          </section>
+  
+          <section id="view-assigned-complaints" class="feature py-4">
+            <h2 class="mb-3"><a [routerLink]="'/view-assigned-complaints'">Assigned Complaints</a></h2>
+            <p>View and resolve complaints assigned to engineers.</p>
+          </section>
+  
+          <!-- Repeat the same structure for other feature sections -->
+  
+        </div>
+      </div>
+    </main>
+  
+    <footer class="text-center mt-5 text-white">
+      <p>&copy; 2023 Tsotetsi Moeketsi. All rights reserved.</p>
+    </footer>
   </div>
+
 
   

@@ -1,13 +1,25 @@
-body{
-    background: url('../../assets/images/software-engineer.png');
+body {
+    background-color: #f8f9fa;
 }
 
-ul{
-    font-size: 0.9rem;
-    margin-left:4rem;
+.feature {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Slightly transparent white */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
 }
 
-.role{
-    margin-right: 1rem;
-    font-weight: 500;
+.feature h2 a {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.feature h2 a:hover {
+    text-decoration: underline;
+}
+
+.feature p {
+    color: #6c757d;
 }

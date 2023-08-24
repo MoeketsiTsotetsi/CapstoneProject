@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-    <a class="navbar-brand" href="#"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
+    <a class="navbar-brand"><img src="../assets/images/satellite.png" alt="logo" width="50" height="50"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,30 +10,29 @@
             <ng-container *ngIf="userRole === 'admin'">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/admin-home" style="color: white;">Admin Home</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/admin-home">Admin Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/create-user" style="color: white;">Create User</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/create-user">Create User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-all-users" style="color: white;">All Users</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-all-users">All Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-wip-complaints" style="color: white;">WIP Complaints</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-wip-complaints">WIP Complaints</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-all-completed-complaints" style="color: white;">Completed
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-all-completed-complaints">Completed
                             Complaints</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-all-complaints" style="color: white;">All Complaints</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-all-complaints">All Complaints</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-raised-complaints" style="color: white;">Raised
-                            Complaints</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-raised-complaints">Raised Complaints</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-escalated-complaints" style="color: white;">Escalated
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-escalated-complaints">Escalated
                             Complaints</a>
                     </li>
                 </ul>
@@ -43,11 +42,11 @@
             <ng-container *ngIf="userRole === 'manager'">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/manager-home" style="color: white;">Manager Home</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/manager-home">Manager Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-all-manager-complaints" style="color: white;">View All
-                            Manager Complaints</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-all-manager-complaints">View All Manager
+                            Complaints</a>
                     </li>
                 </ul>
             </ng-container>
@@ -56,10 +55,10 @@
             <ng-container *ngIf="userRole === 'engineer'">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/engineer-home" style="color: white;">Engineer Home</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/engineer-home">Engineer Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/view-assigned-complaints" style="color: white;">Assigned
+                        <a class="nav-link nav-link-custom text-white" routerLink="/view-assigned-complaints">Assigned
                             Complaints</a>
                     </li>
                 </ul>
@@ -69,26 +68,57 @@
             <ng-container *ngIf="userRole === 'customer'">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/home" style="color: white;">Home</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/submit-complaint" style="color: white;">Submit Complaint</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/submit-complaint">Submit Complaint</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/track-complaints" style="color: white;">Track Complaints</a>
+                        <a class="nav-link nav-link-custom text-white" routerLink="/track-complaints">Track Complaints</a>
                     </li>
                 </ul>
             </ng-container>
         </div> <!-- End of centered menu container -->
-    </div>
 
-    <!-- Logout button -->
-    <div class="ml-auto">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a routerLink="/login" class="nav-link btn btn-success"
+        <!-- mobile only -->
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item d-block d-md-none">
+            <a class="nav-link text-white" href="#">Profile</a>
+        </li>
+        <li class="nav-item d-block d-md-none">
+            <a routerLink="/login" class="nav-link" style="color: white; margin-right: 10px;">Logout</a>
+        </li>
+
+        <!-- Desktop buttons -->
+            <li class="nav-item d-none d-lg-block">
+                <a class="text-white nav-link btn btn-outline-danger  ">Profile</a>
+            </li>
+            &nbsp;
+            <li class="nav-item d-none d-lg-block">
+                <a routerLink="/login" class="nav-link btn btn-outline-success "
                     style="color: white; margin-right: 10px;">Logout</a>
             </li>
         </ul>
     </div>
 </nav>
+
+
+<style>
+    /* Add a hover effect for the navigation links */
+    .nav-link-custom {
+        color: white;
+        transition: background-color 0.3s, color 0.3s;
+        /* Add a smooth transition for the hover effect */
+        padding: 10px 15px;
+        /* Adjust padding to match your design */
+        border-radius: 5px;
+        /* Add rounded corners for a button-like look */
+    }
+
+    .nav-link-custom:hover {
+        background-color: #ffc107;
+        /* Change to the desired background color on hover */
+        color: #333;
+        /* Change to the desired text color on hover */
+    }
+</style>

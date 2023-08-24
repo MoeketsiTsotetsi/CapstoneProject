@@ -1,5 +1,33 @@
 <app-navigation></app-navigation>
 
-  <div class="container">
-    <h1 class="text-center text-primary">Manager Home </h1>
+  <div class="container-fluid">
+    <header class="text-center mt-5 text-white">
+      <h1 class="display-4">Welcome to the Manager Dashboard</h1>
+      <p class="lead">Your central hub for managing complaints and overseeing processes.</p>
+    </header>
+  
+    <main class="mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+  
+          <section id="manager-home" class="feature py-4">
+            <h2 class="mb-3"><a [routerLink]="'/manager-home'">Manager Home</a></h2>
+            <p>Access the manager dashboard to view and manage complaints.</p>
+          </section>
+  
+          <section id="view-all-manager-complaints" class="feature py-4">
+            <h2 class="mb-3"><a [routerLink]="'/view-all-manager-complaints'">View All Manager Complaints</a></h2>
+            <p>View and manage all complaints assigned to managers.</p>
+          </section>
+  
+          <!-- Repeat the same structure for other feature sections -->
+  
+        </div>
+      </div>
+    </main>
+  
+    <footer class="text-center mt-5 text-white">
+      <p>&copy; 2023 Tsotetsi Moeketsi. All rights reserved.</p>
+    </footer>
   </div>
+

@@ -2,9 +2,47 @@
 
 *{
     font-family: 'Titillium Web', sans-serif;
+    
+}
 
-    
-    
+
+.nav-link-custom {
+    color: white;
+    transition: color 0.3s ease-in-out;
+    /* Add a smooth transition effect */
+}
+
+.nav-link-custom:hover {
+    color: #ffc107;
+    /* Change color on hover */
+}
+
+
+
+
+
+/* Media query for desktop view */
+@media (min-width: 992px) {
+
+    /* Show the Profile and Logout buttons on the right side */
+    .navbar-nav.profile-logout-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-nav.profile-logout-buttons .nav-item {
+        margin-left: 10px;
+        /* Add spacing between buttons */
+    }
+}
+
+/* Additional media query for smaller desktop screens */
+@media (min-width: 1200px) {
+
+    /* Adjust the spacing between buttons on larger desktop screens */
+    .navbar-nav.profile-logout-buttons .nav-item {
+        margin-left: 20px;
+    }
 }
 
 body{
