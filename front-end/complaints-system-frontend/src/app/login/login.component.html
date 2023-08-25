@@ -16,10 +16,18 @@
     <input type="submit" value="SignIn" class="btn btn-success btn-lg" /> &nbsp;
     <input type="button" value="Register" class="btn btn-primary btn-lg" (click)="goToRegister()" />
 
-    <div class="mb-3" *ngIf="errorAlert">
-      <div class="alert alert-primary alert-box" role="alert">
-        {{errorMsg}}
+
+
+    <div class="text-center mb-3">
+      <div *ngIf="errorAlert" class="centered-error-section">
+        <div class="alert alert-primary alert-box" role="alert">
+          {{errorMsg}}
+        </div>
       </div>
     </div>
+
+
+
+
   </form>
 </div>

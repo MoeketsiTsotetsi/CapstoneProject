@@ -8,12 +8,10 @@
 }
 
 
-
-
-
-.alert{
-    width:50%;
-    margin-left: 5rem;
+.centered-error-section {
+    width: 60%;
+    margin: 0 auto;
+    /* This will center the element horizontally */
 }
 
 .homeDiv{

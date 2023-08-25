@@ -1,35 +1,33 @@
-<app-navigation> </app-navigation>
-    <div class="container">
-      <table class="table table-dark" *ngif="complaints.length > 0">
-      <thead>
-          <tr>
-              <th>Complaint ID</th>
-              <th>Customer email</th>
-              <th>Complaint Address</th>
-              <th>Zip Code</th>
-              <th>Assigned Engineer</th>
-              <th>Reason</th>
-              <th>Status</th>
-              <th>Action</th>
-          </tr>
-      </thead>
-    
-      <tbody>
-          <tr *ngFor="let c of complaints">
-              <td>{{c.cid}}</td>
-              <td>{{c.cemail}}</td>
-              <td>{{c.address}}</td>
-              <td>{{c.code}}</td>
-              <td>{{c.eemail}}</td>
-              <td>{{c.reason}}</td>
-              <td>{{c.status}}</td>
-              <td><input type="button" value="Delete" class="btn btn-danger" (click)="deleteComplaint(c.cid)"></td>
-            </tr>
-      </tbody>
-  
-      </table>
+<app-navigation></app-navigation>
+<div class="container">
+  <table class="table table-dark" *ngIf="complaints.length > 0">
+    <thead>
+      <tr>
+        <th>Complaint ID</th>
+        <th>Customer email</th>
+        <th>Complaint Address</th>
+        <th>Zip Code</th>
+        <th>Assigned Engineer</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of complaints">
+        <td>{{c.cid}}</td>
+        <td>{{c.cemail}}</td>
+        <td>{{c.address}}</td>
+        <td>{{c.code}}</td>
+        <td>{{c.eemail}}</td>
+        <td>{{c.reason}}</td>
+        <td>{{c.status}}</td>
+        <td><input type="button" value="Delete" class="btn btn-danger" (click)="deleteComplaint(c.cid)"></td>
+      </tr>
+    </tbody>
+  </table>
 
-      <div class="text-center" *ngIf="complaints.length ==0">
-        <h1> No Escalated Complaints at the Moment</h1>
-      </div>
-    </div>
+  <div class="text-center text-white" *ngIf="complaints.length === 0">
+    <h1>No Escalated Complaints at the Moment</h1>
+  </div>
+</div>

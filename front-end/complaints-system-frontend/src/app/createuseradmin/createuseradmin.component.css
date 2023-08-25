@@ -1,23 +1,55 @@
-.form-control{
-    margin-left: 30rem;
-    width:40%;
+.registration-form {
+    max-width: 80%;
+    /* Adjust the width as needed */
+    margin: 0 auto;
+    /* Center the form horizontally */
+    padding: 20px;
+    /* Add some padding for better readability */
 }
 
-.btn{
-    border-radius:.9rem;
+.registration-form label,
+.registration-form .form-control,
+.alert {
+    color: white;
+    /* Set the text color to white for labels, form controls, and alerts */
 }
 
-.alert{
-    width:50%;
-    margin-left: 25rem;
+.registration-form .form-control {
+    border: 1px solid white;
+    /* Add a white border to form controls */
+    margin: 5px 0;
+    /* Reduce margin on small screens */
 }
 
-ul{
-    font-size: 1rem;
-    margin-left:4rem;
+.registration-form .alert {
+    text-align: center;
+    /* Center the text within the alert */
 }
 
-.role{
-    margin-right: 1rem;
-    font-weight: 500;
+@media screen and (min-width: 768px) {
+    .registration-form .form-control {
+        width: 50%;
+        /* Set the width to 50% on desktop screens */
+        margin: 5px auto;
+        /* Center the form controls horizontally */
+        background-color: white;
+        /* Set the background color to white on desktop screens */
+        color: black;
+        /* Set the text color to black for better readability */
+    }
+
+    .registration-form .alert {
+        display: flex;
+        justify-content: center;
+        /* Center the alert horizontally */
+        align-items: center;
+        /* Center the alert vertically */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .registration-form {
+        max-width: 100%;
+        /* Full width on small screens */
+    }
 }
