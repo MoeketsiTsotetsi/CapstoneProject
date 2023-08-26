@@ -18,27 +18,28 @@ import { ViewescalatedcomplaintsComponent } from './viewescalatedcomplaints/view
 import { ViewraisedcomplaintsComponent } from './viewraisedcomplaints/viewraisedcomplaints.component';
 import { ViewwipcomplaintsComponent } from './viewwipcomplaints/viewwipcomplaints.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './service/auth.guard';
 
 const routes: Routes = [
-  {path: 'login',component:LoginComponent},
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'register',component:RegistrationComponent},
-  {path:'manager-home',component:ManagerHomeComponent},
-  {path:'admin-home',component:AdminHomeComponent},
-  {path:'engineer-home',component:EngineerComponent},
-  {path:'submit-complaint',component:SubmitComplaintComponent},
-  {path:'track-complaints',component:TrackComplaintsComponent},
-  {path:'view-all-manager-complaints',component:ViewallmanagerComponent},
-  {path:'view-assigned-complaints',component:ViewassignedcomplaintsComponent},
-  {path:'view-all-complaints',component:ViewAllComplaintsComponent},
-  {path:'view-raised-complaints',component:ViewraisedcomplaintsComponent},
-  {path:'view-wip-complaints',component:ViewwipcomplaintsComponent},
-  {path:'view-escalated-complaints',component:ViewescalatedcomplaintsComponent},
-  {path:'create-user',component:CreateuseradminComponent},
-  {path:'view-all-users',component:ViewAllUsersComponent},
-  {path:'view-all-completed-complaints',component:ViewcompletedcomlaintsComponent},
-  {path:'profile',component:ProfileComponent}
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'manager-home', component: ManagerHomeComponent, canActivate: [AuthGuard] },
+  { path: 'admin-home', component: AdminHomeComponent, canActivate: [AuthGuard] },
+  { path: 'engineer-home', component: EngineerComponent, canActivate: [AuthGuard] },
+  { path: 'submit-complaint', component: SubmitComplaintComponent, canActivate: [AuthGuard] },
+  { path: 'track-complaints', component: TrackComplaintsComponent, canActivate: [AuthGuard] },
+  { path: 'view-all-manager-complaints', component: ViewallmanagerComponent, canActivate: [AuthGuard] },
+  { path: 'view-assigned-complaints', component: ViewassignedcomplaintsComponent, canActivate: [AuthGuard] },
+  { path: 'view-all-complaints', component: ViewAllComplaintsComponent, canActivate: [AuthGuard] },
+  { path: 'view-raised-complaints', component: ViewraisedcomplaintsComponent, canActivate: [AuthGuard] },
+  { path: 'view-wip-complaints', component: ViewwipcomplaintsComponent, canActivate: [AuthGuard] },
+  { path: 'view-escalated-complaints', component: ViewescalatedcomplaintsComponent, canActivate: [AuthGuard] },
+  { path: 'create-user', component: CreateuseradminComponent, canActivate: [AuthGuard] },
+  { path: 'view-all-users', component: ViewAllUsersComponent, canActivate: [AuthGuard] },
+  { path: 'view-all-completed-complaints', component: ViewcompletedcomlaintsComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

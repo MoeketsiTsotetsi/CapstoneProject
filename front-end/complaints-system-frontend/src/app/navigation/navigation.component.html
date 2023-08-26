@@ -86,7 +86,7 @@
             <a routerLink="/profile" class="nav-link text-white">Profile</a>
         </li>
         <li class="nav-item d-block d-md-none">
-            <a routerLink="/login" class="nav-link" style="color: white; margin-right: 10px;">Logout</a>
+            <a (click)="logout()" class="nav-link" style="color: white; margin-right: 10px;">Logout</a>
         </li>
 
         <!-- Desktop buttons -->
@@ -95,7 +95,7 @@
             </li>
             &nbsp;
             <li class="nav-item d-none d-lg-block">
-                <a routerLink="/login" class="nav-link btn btn-outline-success "
+                <a (click)="(logout())" class="nav-link btn btn-outline-success "
                     style="color: white; margin-right: 10px;">Logout</a>
             </li>
         </ul>
