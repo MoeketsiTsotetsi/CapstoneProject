@@ -21,6 +21,8 @@ export class NavigationComponent implements OnInit {
   logout(){
     localStorage.removeItem("userEmail");
     localStorage.removeItem("userRole");
+
+    this.router.navigate(['/login']);
   }
 
 }
